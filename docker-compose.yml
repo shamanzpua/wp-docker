@@ -8,7 +8,7 @@ services:
     ports:
      - "81:80"
     volumes:
-     - ./:/var/www/html
+     - ./www:/var/www/html
     depends_on:
      - mysql
     links:
@@ -32,3 +32,5 @@ services:
        - mysql
       ports:
        - "82:80"
+      environment:
+       - PMA_HOST=mysql
